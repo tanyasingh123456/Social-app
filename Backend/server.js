@@ -10,8 +10,12 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
+
+app.use(cors({
+  origin: "https://social-app-three-kohl.vercel.app"
+}));
 
 app.use((req, res, next) => {
   req.userId = "698c185c77485d7766c443df"; 
